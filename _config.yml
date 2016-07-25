@@ -5,7 +5,7 @@ email: michael@monithor.io
 copyright_name: Monithor
 description: "Monithor: keep an eye on your server. Monithor blog is about tips and best practices for server performance!"
 baseurl: ""
-url: "https://monithor.io"
+url: "https://monithor.github.io/blogtest1/"
 twitter_username: "@Monithor"
 #github_username:  monithor
 #facebook_username:  IronSummitMedia
