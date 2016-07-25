@@ -1,0 +1,21 @@
+# Site settings
+title: Monithor Blog
+header-img: img/home-bg.jpg
+email: michael@monithor.io
+copyright_name: Monithor
+description: "Monithor: keep an eye on your server. Monithor blog is about tips and best practices for server performance!"
+baseurl: ""
+url: "https://monithor.io"
+twitter_username: "@Monithor"
+#github_username:  monithor
+#facebook_username:  IronSummitMedia
+email_username:  michael@monithor.io
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+gems: [jekyll-paginate, jekyll-feed]

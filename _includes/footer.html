@@ -1,0 +1,152 @@
+<!-- Footer -->
+<footer class="paddingtop20 paddingbottom20">
+    <div class="container">
+      <div class="container-fluid">
+        <div class="row footerlinks paddingtop20 paddingbottom20">
+          <div class="col-sm-4">
+            <ul class="list-unstyled text-center">
+              <li><a href="#">footer link</a></li>
+              <li><a href="#">footer link</a></li>
+              <li><a href="#">footer link</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-4">
+            <ul class="list-unstyled text-center">
+              <li><a href="#">footer link</a></li>
+              <li><a href="#">footer link</a></li>
+              <li><a href="#">footer link</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-4">
+            <ul class="list-unstyled text-center">
+              <li><a href="#">footer link</a></li>
+              <li><a href="#">footer link</a></li>
+              <li><a href="#">footer link</a></li>
+            </ul>
+          </div>
+        </div>
+           <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% if site.twitter_username %}
+                    <li>
+                        <a href="https://twitter.com/{{ site.twitter_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if site.facebook_username %}
+                    <li>
+                        <a href="https://www.facebook.com/{{ site.facebook_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if site.github_username %}
+                    <li>
+                        <a href="https://github.com/{{ site.github_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if site.email_username %}
+                    <li>
+                        <a href="mailto:{{ site.email_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; {{ site.copyright_name }} {{ site.time | date: '%Y' }}</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<!-- jQuery -->
+<script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script>
+<script src="{{ "/js/smooth-scroll.min.js" | prepend: site.baseurl }}"></script>
+<!-- Bootstrap Core JavaScript -->
+<!--script src="{{ "/js/bootstrap.min.js " | prepend: site.baseurl }}"></script-->
+
+<!-- Custom Theme JavaScript -->
+<!--script src="{{ "/js/clean-blog.js " | prepend: site.baseurl }}"></script-->
+<!-- Michael JavaScript -->
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+    var MQL = 170;
+
+    //primary navigation slide-in effect
+    if ($(window).width() > MQL) {
+        var headerHeight = $('.navbar-custom').height();
+        $(window).on('scroll', {
+                previousTop: 0
+            },
+            function() {
+                var currentTop = $(window).scrollTop();
+                //check if user is scrolling up
+                if (currentTop < this.previousTop) {
+                    //if scrolling up...
+                    if (currentTop > 0 && $('.navbar-custom').hasClass('is-fixed')) {
+                        $('.navbar-custom, div.logo').addClass('is-visible');
+                        $('#mikenav').css('top','62px');
+                    } else {
+                        $('.navbar-custom, div.logo').removeClass('is-visible is-fixed');
+                        $('#mikenav').css('top','')
+                    }
+                } else {
+                    //if scrolling down...
+                    $('.navbar-custom').removeClass('is-visible');$('#mikenav').removeClass('showit').css('top','');
+                    if (currentTop > headerHeight && !$('.navbar-custom').hasClass('is-fixed')) $('.navbar-custom').addClass('is-fixed');
+                }
+                this.previousTop = currentTop;
+            });
+    }
+});
+// mobile menu
+    $('a#showhide').click(function(e){
+var a = $('#mikenav').hasClass('showit');
+var h = $('#mikenav').height() + 30;
+var ha = "translateY("+h+"px)";
+var hb = "translateY(-"+h+"px)";
+var t = $(window).scrollTop();
+    e.preventDefault();
+if (a == true ) {$('#mikenav').removeClass('showit');
+    if ( t == 0 ) { setTimeout(function(){$('header div.post-heading').css('transition-duration','.5s').css('transform','translateY(0)')},200);}} 
+else {$('#mikenav').addClass('showit');  if ( t == 0 ) { $('header div.post-heading').css('transition-duration','.1s').css('transform',ha);}
+}
+    });
+// smooth scroll
+smoothScroll.init({
+    //selector: '[data-scroll]', // Selector for links (must be a valid CSS selector)
+    //selectorHeader: '[data-scroll-header]', // Selector for fixed headers (must be a valid CSS selector)
+    speed: 1300, // Integer. How fast to complete the scroll in milliseconds
+    easing: 'easeInOutCubic', // Easing pattern to use
+    offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
+    updateURL: false, // Boolean. If true, update the URL hash on scroll
+    //callback: function ( anchor, toggle ) {} // Function to run after scrolling
+});
+</script>
