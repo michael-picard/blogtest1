@@ -4,16 +4,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ site.description }}">
-    <link rel="shortcut icon" href="{{ "/img/monithor-favicon.png" | prepend: site.baseurl }}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ site.github.url }}/img/monithor-favicon.png" type="image/x-icon" />
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="{{ "/css/bootstrap_custom_blog.min.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ site.github.url }}/css/bootstrap_custom_blog.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ "/css/monithor-blog.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ site.github.url }}/css/monithor-blog.css">
 
     <!-- Pygments Github CSS -->
     <!--link rel="stylesheet" href="{{ "/css/syntax.css" | prepend: site.baseurl }}"-->
